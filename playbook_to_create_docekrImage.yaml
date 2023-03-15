@@ -5,8 +5,6 @@
   tasks:
   - name: create docker image using war file
     command: docker build -t devopsImage:latest .
-    args:
-      chdir: /opt/k8s-lab/Deploy-on-K8s/
 
   - name: create tag to image
     command: docker tag devopsImage bhaskar150/devopsImage
