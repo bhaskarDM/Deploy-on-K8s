@@ -1,15 +1,19 @@
 ---
 - hosts: ansible-server
   become: true
+
   tasks:
-  - name: create images
-    command: docker image build -t devopsImage:latest .
+  - name: create docker image using war file
+    command: docker build -t devopsImage:latest .
     args:
-      chdir /opt/k8s-lab
-  - name: tag docker image
-    command: docker tag devopsImage:latest bhaskar150/devopsImage:latest
-  - name: push  image to repository
-    command: docker push bhaskar150/devopsImage:latest
-  - name: remove docker images from local repository
-    command: docker rmi devopsImage:latest bhaskar150/devopsImage:latest
+      chdir: /opt/k8s-lab/Deploy-on-K8s/
+
+  - name: create tag to image
+    command: docker tag devopsImage bhaskar150/devopsImage
+
+  - name: push image on to dockerhub
+    command: docker push bhaskar150/devopsImage
+
+  - name: remove docker images form ansible server
+    command: docker rmi devopsImage:latest bhaskar150/devopsImage
     ignore_errors: yes
