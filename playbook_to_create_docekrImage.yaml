@@ -4,14 +4,14 @@
 
   tasks:
   - name: create docker image using war file
-    command: docker build -t devopsImage:latest .
+    command: docker build -t devopsimage:latest .
 
   - name: create tag to image
-    command: docker tag devopsImage bhaskar150/devopsImage
+    command: docker tag devopsimage bhaskar150/devopsimage
 
   - name: push image on to dockerhub
-    command: docker push bhaskar150/devopsImage
+    command: docker push bhaskar150/devopsimage
 
   - name: remove docker images form ansible server
-    command: docker rmi devopsImage:latest bhaskar150/devopsImage
+    command: docker rmi devopsimage:latest bhaskar150/devopsimage
     ignore_errors: yes
