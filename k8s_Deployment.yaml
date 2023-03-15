@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: MyDeployment
+spec:
+  selector:
+    matchLabels:
+      app: devops-project
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    RollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: devops-project
+    spec:
+      containers:
+        - name: devops-project-container
+          image: bhaskar150/devopsImage
+          imagePullPolicy: always
+          ports:
+            - containerPort: 8080
+      

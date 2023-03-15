@@ -1,0 +1,7 @@
+---
+- name: to deploy service
+  hosts: kubernetes
+  user: ubuntu
+  tasks:
+    - name: to deploy service
+      command: kubectl apply -f k8s_service.yaml

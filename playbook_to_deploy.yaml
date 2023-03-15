@@ -1,0 +1,9 @@
+---
+- name: to deploy
+  hosts: kubernetes
+  user: ubuntu
+  tasks:
+    - name: create a deployment
+      command: kubectl apply -f k8s_Deployment.yaml
+    - name: to rollout new image from dockerhub
+      command: kubectl rollout restart deployment/MyDeployment
