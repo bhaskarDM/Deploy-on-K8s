@@ -2,7 +2,7 @@
 - hosts: ansible-server
   become: true
   tasks:
-  - name: create docker image
+  - name: create images
     command: docker image build -t devopsImage:latest .
     args:
       chdir /opt/k8s-lab
