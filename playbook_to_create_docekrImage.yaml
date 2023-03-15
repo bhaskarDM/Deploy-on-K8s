@@ -4,7 +4,7 @@
 
   tasks:
   - name: create docker image using war file
-    command: docker build -t devopsimage:latest .
+    shell: docker image build -t devopsimage:latest .
 
   - name: create tag to image
     command: docker tag devopsimage bhaskar150/devopsimage
