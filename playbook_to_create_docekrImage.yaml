@@ -1,6 +1,5 @@
 ---
-- name: Create docker image
-  hosts: ansible-server
+- hosts: ansible-server
   become: true
   tasks:
   - name: create docker image
