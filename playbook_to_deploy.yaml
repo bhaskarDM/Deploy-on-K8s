@@ -1,7 +1,7 @@
 ---
 - name: to deploy
   hosts: kubernetes
-  user: ansible
+  become: true
   tasks:
     - name: create a deployment
       command: kubectl apply -f k8s_Deployment.yaml
