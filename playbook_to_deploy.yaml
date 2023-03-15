@@ -6,4 +6,4 @@
     - name: create a deployment
       command: kubectl apply -f k8s_Deployment.yaml
     - name: to rollout new image from dockerhub
-      command: kubectl rollout restart deployment/MyDeployment
+      command: kubectl rollout restart deployment/mydeployment
