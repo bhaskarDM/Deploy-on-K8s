@@ -4,7 +4,7 @@
 
   tasks:
   - name: create docker image using war file
-    command: docker build -t devopsimage:latest /home/ansible/opt/k8s-lab/Deploy-on-K8s
+    command: docker build -t devopsimage:latest .
 
   - name: create tag to image
     command: docker tag devopsimage bhaskar150/devopsimage
